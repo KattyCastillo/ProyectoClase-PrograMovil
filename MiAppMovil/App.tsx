@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import CustomInput from './src/components/CustomInput';
+import { useState } from 'react';
 
 export default function App() {
+const [inputText, setInputText] = useState(""); // Estado para almacenar el valor del input en React Native
+   
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <CustomInput 
+      type={"number"} 
+      placeholder={"Ingresa tu número de teléfono"} 
+      value={inputText} 
+      onChange={setInputText}
+      />
+
     </View>
   );
 }
